@@ -355,10 +355,10 @@ while cv.waitKey(1) < 0:
     cv.imwrite("Cplate_scale.jpg", pl)
 
     #align
-    #imReg = alignImages(im, frame,pl,df.iloc[0,4],df.iloc[0,5])
+    imReg = alignImages(im, frame,pl,df.iloc[0,4],df.iloc[0,5])
 
     #transparent
-    image_bgra = trans(pl)
+    image_bgra = trans(imReg)
     cv.imwrite("transparent plate.jpg", image_bgra)
 
     #overlay transparent img to frame.
